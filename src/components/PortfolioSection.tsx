@@ -1,43 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Check } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
-const projects = [
+const formats = [
   {
-    title: "Умный помощник по выборам",
-    category: "AI/ML и веб-разработка",
-    image: "/omgekeerdestemwijzer-banner.png",
+    title: "Пеший курьер",
+    icon: "Footprints",
+    income: "от 60 000 ₽/мес",
     description:
-      "AI-приложение для выборов. Пользователи задают вопросы о позициях партий и получают 100% фактические ответы из официальных программ с использованием RAG-технологии.",
-    url: "https://de-omgekeerde-stemwijzer.onrender.com/",
-    tags: ["Next.js", "AI/ML", "RAG", "TypeScript"],
+      "Доставка по центру и плотным районам в пределах пешей доступности. Идеально для старта без транспорта и вложений.",
+    features: ["Транспорт не нужен", "Зона рядом с домом", "Подходит студентам"],
   },
   {
-    title: "Автомойка Tahsin",
-    category: "Веб-дизайн и разработка",
-    image: "/autopoetsbedrijf-tahsin-project.png",
+    title: "Велокурьер",
+    icon: "Bike",
+    income: "от 90 000 ₽/мес",
     description:
-      "Профессиональный сайт для автомойки с 20-летним опытом. Полная презентация услуг, автомойки и гаража с современным адаптивным дизайном.",
-    url: "https://www.autopoetsbedrijftahsin.nl/",
-    tags: ["React", "Next.js", "Tailwind CSS"],
+      "Доставка на велосипеде или электросамокате. Больше заказов за смену и выше доход. Поможем с арендой транспорта.",
+    features: ["Аренда транспорта", "Больше заказов", "Активный формат"],
   },
   {
-    title: "Кадровое агентство CAN",
-    category: "Веб-разработка",
-    image: "/can-uitzendbureau-project.png",
+    title: "Авто-курьер",
+    icon: "Car",
+    income: "от 120 000 ₽/мес",
     description:
-      "Кадровое агентство с 30-летним опытом в садоводческом секторе. Сайт с обзором услуг и прямыми контактами для работодателей и соискателей.",
-    url: "https://canbv.nl/",
-    tags: ["Next.js", "React", "Tailwind CSS"],
+      "Доставка на личном автомобиле — крупные заказы и длинные маршруты. Максимальный доход и компенсация топлива.",
+    features: ["Компенсация топлива", "Крупные заказы", "Высокий доход"],
   },
   {
-    title: "Портфолио Murat Sahin",
-    category: "Портфолио-сайт",
-    image: "/murat-sahin-portfolio.png",
+    title: "Курьер на мото/скутере",
+    icon: "Bike",
+    income: "от 110 000 ₽/мес",
     description:
-      "Профессиональное портфолио full-stack разработчика. Демонстрация проектов, навыков и опыта с современным минималистичным дизайном и темной темой.",
-    url: "https://murat-sahin-dev.vercel.app/",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", ".NET Core"],
+      "Быстрая доставка на мотоцикле или скутере по всей Москве. Минимум пробок, максимум выполненных заказов за день.",
+    features: ["Гибкие маршруты", "Минимум пробок", "Высокая ставка"],
   },
 ]
 
@@ -46,43 +42,38 @@ export function PortfolioSection() {
     <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Наше портфолио</h2>
+          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+            Форматы работы
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Выберите, как зарабатывать</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Ознакомьтесь с подборкой наших последних проектов и узнайте, как мы помогаем бизнесу расти с помощью мощных цифровых решений.
+            Пеший, на велосипеде, скутере или авто — мы найдём формат под вас. Чем мобильнее, тем выше доход.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {formats.map((format, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300"
+              className="group overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="gap-2"
-                    onClick={() => window.open(project.url, "_blank")}
-                  >
-                    Открыть проект <ExternalLink className="h-4 w-4" />
-                  </Button>
+              <CardContent className="p-8">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="inline-flex p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 group-hover:scale-110">
+                    <Icon name={format.icon} size={28} />
+                  </div>
+                  <span className="text-primary font-bold text-lg">{format.income}</span>
                 </div>
-              </div>
-              <CardContent className="p-6">
-                <p className="text-sm text-primary font-semibold mb-2">{project.category}</p>
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{format.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5">{format.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
-                      {tag}
+                  {format.features.map((feature, featureIndex) => (
+                    <span
+                      key={featureIndex}
+                      className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full bg-muted text-muted-foreground"
+                    >
+                      <Check className="h-3 w-3 text-primary" />
+                      {feature}
                     </span>
                   ))}
                 </div>

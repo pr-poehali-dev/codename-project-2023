@@ -4,39 +4,39 @@ import { QuoteFormDialog } from "@/components/QuoteFormDialog"
 
 const pricingTiers = [
   {
-    name: "Базовый",
-    price: "99 900",
+    name: "Подработка",
+    price: "60 000",
     features: [
-      "До 5 страниц",
-      "Адаптивный дизайн",
-      "Базовая SEO-оптимизация",
-      "Форма обратной связи",
-      "1 месяц поддержки",
+      "4 часа в день",
+      "5 дней в неделю",
+      "Пеший формат",
+      "Выплаты каждый день",
+      "Зона рядом с домом",
     ],
     highlighted: false,
   },
   {
-    name: "Про",
-    price: "249 900",
+    name: "Полный день",
+    price: "120 000",
     features: [
-      "До 15 страниц",
-      "Премиум-дизайн",
-      "Расширенная SEO-оптимизация",
-      "Интеграция CMS",
-      "Функционал e-commerce",
-      "3 месяца поддержки",
+      "8-10 часов в день",
+      "5-6 дней в неделю",
+      "Вело / скутер / авто",
+      "Доплаты за активные часы",
+      "Бонусы за погоду",
+      "Приоритет на заказы",
     ],
     highlighted: true,
   },
   {
-    name: "Индивидуальный",
-    price: "По запросу",
+    name: "Максимум",
+    price: "150 000",
     features: [
-      "Неограниченно страниц",
-      "Кастомный функционал",
-      "API-интеграции",
-      "Персональный менеджер",
-      "6 месяцев поддержки",
+      "Гибкий плотный график",
+      "Авто-формат",
+      "Компенсация топлива",
+      "Самые выгодные заказы",
+      "Премии за стаж",
     ],
     highlighted: false,
   },
@@ -57,13 +57,13 @@ export function PricingSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Прозрачные цены
+            Прозрачный заработок
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-balance">
-            Выберите <span className="text-primary">идеальный тариф</span> для вашего проекта
+            Сколько можно <span className="text-primary">заработать</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            От стартапов до крупного бизнеса — у нас есть подходящее решение
+            Доход зависит от графика и формата — от лёгкой подработки до полной занятости
           </p>
         </div>
 
@@ -79,22 +79,16 @@ export function PricingSection() {
             >
               {tier.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                  Популярный
+                  Выбор большинства
                 </div>
               )}
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl mb-2">{tier.name}</CardTitle>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">
-                    {tier.price === "По запросу" ? (
-                      <span className="text-3xl">{tier.price}</span>
-                    ) : (
-                      <>
-                        <span className="text-lg font-normal text-muted-foreground">от </span>
-                        {tier.price}
-                        <span className="text-lg font-normal text-muted-foreground"> ₽</span>
-                      </>
-                    )}
+                    <span className="text-lg font-normal text-muted-foreground">до </span>
+                    {tier.price}
+                    <span className="text-lg font-normal text-muted-foreground"> ₽/мес</span>
                   </span>
                 </div>
               </CardHeader>
@@ -112,7 +106,7 @@ export function PricingSection() {
                   variant={tier.highlighted ? "default" : "outline"}
                   className={`w-full ${tier.highlighted ? "shadow-lg shadow-primary/20" : ""}`}
                 >
-                  {tier.price === "По запросу" ? "Связаться с нами" : "Выбрать тариф"}
+                  Хочу так зарабатывать
                 </QuoteFormDialog>
               </CardContent>
             </Card>
@@ -121,8 +115,8 @@ export function PricingSection() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
-            Все тарифы включают <span className="text-primary font-semibold">бесплатную настройку хостинга</span> и{" "}
-            <span className="text-primary font-semibold">SSL-сертификат</span>
+            Все форматы включают <span className="text-primary font-semibold">ежедневные выплаты</span> и{" "}
+            <span className="text-primary font-semibold">бесплатную экипировку</span>
           </p>
         </div>
       </div>

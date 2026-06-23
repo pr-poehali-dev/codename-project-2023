@@ -27,20 +27,20 @@ export function Navbar() {
           </a>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
-              О нас
-            </a>
             <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">
-              Услуги
+              Условия
             </a>
-            <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
-              Портфолио
+            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+              О работе
             </a>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Тарифы
+              Заработок
+            </a>
+            <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
+              Отзывы
             </a>
             <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
-              Контакты
+              Анкета
             </a>
           </div>
 

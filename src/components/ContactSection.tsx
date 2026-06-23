@@ -35,13 +35,13 @@ export function ContactSection() {
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
-            Контакты
+            Анкета
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Давайте <span className="text-primary">создавать вместе</span>
+            Начните <span className="text-primary">зарабатывать сегодня</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Готовы воплотить ваши цифровые амбиции? Свяжитесь с нами без обязательств и узнайте, чем мы можем помочь.
+            Оставьте заявку — мы перезвоним в течение дня, расскажем про условия и поможем оформиться за один день.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export function ContactSection() {
           <div className="lg:col-span-2">
             <Card className="border-none shadow-xl bg-background">
               <CardHeader>
-                <CardTitle className="text-2xl">Напишите нам</CardTitle>
+                <CardTitle className="text-2xl">Анкета курьера</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -69,53 +69,51 @@ export function ContactSection() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        E-mail *
+                      <label htmlFor="phone" className="text-sm font-medium">
+                        Телефон *
                       </label>
                       <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
                         onChange={handleChange}
-                        placeholder="your@email.ru"
+                        placeholder="+7 900 123-45-67"
                         required
                         className="transition-all focus:scale-[1.02]"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">
-                      Телефон
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Удобный район Москвы
                     </label>
                     <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
+                      id="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
-                      placeholder="+7 900 123-45-67"
+                      placeholder="Например, рядом с метро Тушинская"
                       className="transition-all focus:scale-[1.02]"
                     />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium">
-                      Сообщение *
+                      Комментарий
                     </label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Расскажите о вашем проекте..."
+                      placeholder="Желаемый график, формат работы, удобное время для звонка..."
                       rows={6}
-                      required
                       className="transition-all focus:scale-[1.02]"
                     />
                   </div>
                   <Button type="submit" size="lg" className="w-full sm:w-auto group">
                     <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    Отправить
+                    Откликнуться
                   </Button>
                 </form>
               </CardContent>
@@ -130,8 +128,8 @@ export function ContactSection() {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">E-mail</h3>
-                    <p className="text-sm text-muted-foreground">hello@example.com</p>
+                    <h3 className="font-semibold mb-1">Telegram / WhatsApp</h3>
+                    <p className="text-sm text-muted-foreground">Напишите нам — ответим быстро</p>
                   </div>
                 </div>
               </CardContent>
@@ -144,7 +142,7 @@ export function ContactSection() {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Телефон</h3>
+                    <h3 className="font-semibold mb-1">Телефон отдела найма</h3>
                     <p className="text-sm text-muted-foreground">+7 900 123-45-67</p>
                   </div>
                 </div>
@@ -158,11 +156,11 @@ export function ContactSection() {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Время работы</h3>
+                    <h3 className="font-semibold mb-1">Где работаем</h3>
                     <p className="text-sm text-muted-foreground">
-                      Пн - Пт: 9:00 - 18:00
+                      Москва и ближайшее Подмосковье
                       <br />
-                      Выходные: по договоренности
+                      Приём анкет: ежедневно 9:00 - 21:00
                     </p>
                   </div>
                 </div>
